@@ -1,0 +1,650 @@
+---
+const achievements = [
+    {
+        year: "2003",
+        title: "Company Foundation",
+        description: "Established ship chandling operations in UAE",
+    },
+];
+
+const facilities = [
+    {
+        location: "UAE Operations",
+        capabilities: [
+            "Fujairah Port",
+            "Khor Fakkan Port",
+            "Jebel Ali Port",
+            "Dubai Dry Docks",
+            "Abu Dhabi Ports",
+        ],
+        capacity: "All UAE Ports",
+    },
+    {
+        location: "Oman Operations",
+        capabilities: [
+            "Sohar Port",
+            "Duqum Port",
+            "Salalah Port",
+            "Sultan Qaboos Port",
+            "Khasab Port",
+        ],
+        capacity: "All Oman Ports",
+    },
+    {
+        location: "Logistics Hub",
+        capabilities: [
+            "IMPA Standardized Supplies",
+            "ISSA Specifications",
+            "Urgent Order Fulfillment",
+            "Competitive Pricing",
+        ],
+        capacity: "24/7 Service",
+    },
+];
+
+const expertise = [
+    {
+        area: "Core Services",
+        items: [
+            "Ship Chandling",
+            "Machinery Spare Parts",
+            "New-built Ship Stores",
+            "Technical Stores Supply",
+            "Cruise Liner Services",
+        ],
+    },
+    {
+        area: "Port Coverage",
+        items: [
+            "Complete UAE Port Network",
+            "All Oman Ports",
+            "Offshore Support",
+            "Oil & Gas Sector Supply",
+            "Dry Dock Services",
+        ],
+    },
+    {
+        area: "Quality Standards",
+        items: [
+            "IMPA Specifications",
+            "ISSA Standards",
+            "Health & Safety Priority",
+            "Quality Control",
+            "Competitive Pricing",
+        ],
+    },
+];
+
+const teamStats = [
+    { category: "Engineers", count: "450+" },
+    { category: "Technical Experts", count: "300+" },
+    { category: "Project Managers", count: "120+" },
+    { category: "Support Staff", count: "200+" },
+];
+
+const globalPresence = [
+    "Europe: Rotterdam, Hamburg, Marseille",
+    "Asia: Singapore, Shanghai, Dubai",
+    "Americas: Houston, Panama City",
+    "Africa: Cape Town, Lagos",
+    "Oceania: Perth, Sydney",
+];
+
+const services = [
+    {
+        title: "Ship Repair & Maintenance",
+        image: "/about/ship-repair.jpg",
+        description:
+            "Comprehensive repair and maintenance services for all vessel types",
+    },
+    {
+        title: "Offshore Solutions",
+        image: "/about/offshore-solutions.jpg",
+        description:
+            "Specialized support for offshore operations and installations",
+    },
+    {
+        title: "Marine Engineering",
+        image: "/about/marine-engineers.jpg",
+        description: "Advanced engineering solutions for maritime challenges",
+    },
+];
+
+const sustainabilityInitiatives = [
+    {
+        title: "Green Ship Technology",
+        image: "/about/green-ship.jpg",
+        description: "Implementation of eco-friendly marine technologies",
+    },
+    {
+        title: "Ocean Conservation",
+        image: "/about/ocean-conservation.jpg",
+        description: "Active participation in marine ecosystem preservation",
+    },
+];
+
+const marineProjects = [
+    {
+        title: "Vessel Modernization",
+        image: "/about/vessel-modernization.jpg",
+        description: "Complete vessel retrofitting and modernization projects",
+    },
+    {
+        title: "Port Operations",
+        image: "/about/port-operations.jpg",
+        description: "Advanced port management and logistics solutions",
+    },
+    {
+        title: "Underwater Services",
+        image: "/about/underwater-services.jpg",
+        description: "Specialized underwater inspection and maintenance",
+    },
+];
+
+const innovationHighlights = [
+    {
+        title: "Digital Navigation",
+        image: "/about/digital-navigation.jpg",
+        description:
+            "State-of-the-art navigation systems and digital solutions",
+    },
+    {
+        title: "Smart Port Technology",
+        image: "/about/smart-port.jpg",
+        description: "Intelligent port management and automation systems",
+    },
+    {
+        title: "Clean Energy Solutions",
+        image: "/about/clean-energy.jpg",
+        description: "Renewable energy integration for maritime operations",
+    },
+];
+---
+
+<div class="relative min-h-[60vh] sm:min-h-screen">
+    <div
+        class="absolute inset-0 bg-[url('/about/hero-maritime.jpg')] bg-cover bg-center"
+    >
+        <div class="absolute inset-0 from-black/90 to-black/90"></div>
+    </div>
+    <div
+        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32"
+    >
+        <div class="text-center">
+            <h1
+                class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-8 tracking-tighter"
+            >
+                Maritime Excellence <span
+                    class="bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text"
+                    >Since 2003</span
+                >
+            </h1>
+            <p
+                class="text-lg sm:text-xl text-gray-50 max-w-3xl mx-auto leading-relaxed font-light px-4"
+            >
+                Over 20 years of expertise in ship chandling, spare parts
+                supply, and comprehensive maritime solutions across UAE and Oman
+                ports.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Section - Responsive Grid -->
+<section class="py-12 sm:py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="space-y-6 sm:space-y-10">
+                <h2
+                    class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900"
+                >
+                    Our Legacy of Innovation
+                </h2>
+                <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                    For over four decades, we've been at the forefront of marine
+                    industrial innovation.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                    {
+                        teamStats.map((stat) => (
+                            <div class="group hover:bg-[#344CB7]/10 transition-all duration-300 p-4 sm:p-8 rounded-3xl border border-slate-100">
+                                <div class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#344CB7] to-[#344CB7] text-transparent bg-clip-text mb-2">
+                                    {stat.count}
+                                </div>
+                                <div class="text-sm sm:text-base text-slate-600 font-medium">
+                                    {stat.category}
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+            <div class="space-y-10">
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900">
+                    Our Achievements
+                </h3>
+                <div class="space-y-6">
+                    {
+                        achievements.map((achievement) => (
+                            <div class="group hover:bg-[#344CB7]/10 transition-all duration-300 p-8 sm:p-10 rounded-3xl border border-slate-100">
+                                <div class="text-base sm:text-lg text-blue-600 font-semibold mb-3">
+                                    {achievement.year}
+                                </div>
+                                <div class="text-xl sm:text-2xl font-medium text-slate-900 mb-2">
+                                    {achievement.title}
+                                </div>
+                                <div class="text-lg sm:text-xl text-slate-600">
+                                    {achievement.description}
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Facilities Section - Responsive Grid -->
+<section class="py-12 sm:py-16 lg:py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+            class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-16 text-slate-900"
+        >
+            Our Facilities & Capabilities
+        </h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {
+                facilities.map((facility) => (
+                    <div class="group hover:bg-white transition-all duration-300 bg-transparent p-6 sm:p-8 rounded-3xl border border-slate-200">
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-4">
+                            {facility.location}
+                        </h3>
+                        <div class="inline-block px-3 sm:px-4 py-1 sm:py-2 bg-[#344CB7]/10 text-[#344CB7] rounded-full text-sm font-medium mb-4 sm:mb-6">
+                            {facility.capacity}
+                        </div>
+                        <ul class="space-y-3 sm:space-y-4">
+                            {facility.capabilities.map((cap) => (
+                                <li class="flex items-center text-sm sm:text-base text-slate-600 group-hover:text-slate-900 transition-colors">
+                                    <svg
+                                        class="w-4 h-4 sm:w-5 sm:h-5 text-[#344CB7] mr-2 sm:mr-3 flex-shrink-0"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"
+                                        />
+                                    </svg>
+                                    {cap}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-16">Our Expertise</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            {
+                expertise.map((area) => (
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-6">{area.area}</h3>
+                        <ul class="space-y-3">
+                            {area.items.map((item) => (
+                                <li class="flex items-start">
+                                    <svg
+                                        class="w-5 h-5 text-[#344CB7] mr-2 mt-1"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 12l2 2 4-4"
+                                        />
+                                    </svg>
+                                    <span class="text-gray-600">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-16">
+            Core Marine Services
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            {
+                services.map((service) => (
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img
+                            src={service.image}
+                            alt={service.title}
+                            class="w-full h-64 object-cover"
+                        />
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">
+                                {service.title}
+                            </h3>
+                            <p class="text-gray-600">{service.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Sustainability Initiatives</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Leading the maritime industry towards a sustainable future
+                through innovative technologies and environmental stewardship.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+            {
+                sustainabilityInitiatives.map((initiative) => (
+                    <div class="relative group overflow-hidden rounded-xl">
+                        <img
+                            src={initiative.image}
+                            alt={initiative.title}
+                            class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div class="absolute inset-0 via-blue-900/70 to-transparent p-8 flex flex-col justify-end">
+                            <h3 class="text-2xl font-bold text-white mb-2">
+                                {initiative.title}
+                            </h3>
+                            <p class="text-white">{initiative.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+            class="text-3xl font-bold text-center mb-16 bg-gradient-to-r from-[#344CB7] to-blue-600 text-transparent bg-clip-text"
+        >
+            Global Presence
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            {
+                globalPresence.map((location) => (
+                    <div class="text-center p-6 border border-[#344CB7]/20 rounded-lg hover:border-[#344CB7]/40 transition-colors">
+                        <p class="text-lg bg-gradient-to-r from-[#344CB7] to-blue-600 text-transparent bg-clip-text">
+                            {location}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Start of Selection -->
+<section class="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
+    <!-- Enhanced animated background gradient with a shimmering effect -->
+    <div
+        class="absolute inset-0 bg-gradient-to-r from-[#344CB7] via-[#1a1a1a] to-[#344CB7] animate-gradient-shift shimmer-effect"
+    >
+    </div>
+
+    <!-- Animated particles with a more dynamic movement -->
+    <div class="absolute inset-0 particle-container animate-particle-movement">
+    </div>
+
+    <div
+        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+    >
+        <h2
+            class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-8 text-white animate-title"
+        >
+            Ready to Partner with Us?
+        </h2>
+        <p
+            class="text-base sm:text-xl text-blue-100 mb-8 sm:mb-12 max-w-3xl mx-auto px-2 sm:px-4 animate-text"
+        >
+            Join the leading companies who trust us with their marine industrial
+            needs. Our experts are ready to discuss your requirements and
+            provide tailored solutions.
+        </p>
+        <div
+            class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6"
+        >
+            <a
+                href="/contact"
+                class="group w-full sm:w-auto inline-block bg-white text-[#344CB7] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base relative overflow-hidden animate-button-1 hover:scale-105 transition-transform duration-300"
+            >
+                <span class="relative z-10">Contact Our Team</span>
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-500"
+                >
+                </div>
+                <div
+                    class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 glow"
+                >
+                </div>
+            </a>
+            <a
+                href="/services"
+                class="group w-full sm:w-auto inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base relative overflow-hidden animate-button-2 hover:scale-105 transition-transform duration-300"
+            >
+                <span class="relative z-10 text-white">Explore Services</span>
+                <div class="absolute inset-0 border-2 border-white"></div>
+                <div
+                    class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500"
+                >
+                </div>
+                <div
+                    class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pulse"
+                >
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- End of Selection -->
+
+<section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+            class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 sm:mb-6"
+        >
+            Featured Marine Projects
+        </h2>
+        <p
+            class="text-base sm:text-lg lg:text-xl text-gray-600 text-center mb-8 sm:mb-12 lg:mb-16 max-w-3xl mx-auto px-4"
+        >
+            Discover our latest achievements in marine engineering and
+            technological innovation.
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {
+                marineProjects.map((project) => (
+                    <div class="group relative bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                        <div class="image-container">
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                class="image-fit transition-transform duration-300 group-hover:scale-105"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="p-4 sm:p-6 lg:p-8">
+                            <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-900">
+                                {project.title}
+                            </h3>
+                            <p class="text-sm sm:text-base text-gray-600 line-clamp-3">
+                                {project.description}
+                            </p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<section class="py-12 sm:py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+            class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 sm:mb-6 bounce-in"
+        >
+            Innovation in Maritime
+        </h2>
+        <p
+            class="text-lg sm:text-xl text-gray-600 text-center mb-8 sm:mb-12 lg:mb-16 max-w-3xl mx-auto px-4 blur-in delay-200"
+        >
+            Pioneering the future of maritime technology and sustainable
+            operations.
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {
+                innovationHighlights.map((innovation, index) => (
+                    <div
+                        class={`relative group bg-white shadow-lg rounded-xl overflow-hidden tilt-in animate-gpu`}
+                        style={`animation-delay: ${index * 150}ms`}
+                    >
+                        <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+                            <img
+                                src={innovation.image}
+                                alt={innovation.title}
+                                class="w-full h-64 lg:h-80 object-cover transition-all duration-700 group-hover:scale-110"
+                                loading="lazy"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 transition-opacity duration-500 group-hover:opacity-90">
+                                <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 transform transition-transform duration-500 group-hover:translate-y-0">
+                                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold mb-2 text-white transform transition-all duration-500 group-hover:scale-105">
+                                        {innovation.title}
+                                    </h3>
+                                    <p class="text-sm sm:text-base text-white/90 line-clamp-3 transform transition-all duration-500 group-hover:translate-y-0 opacity-90 group-hover:opacity-100">
+                                        {innovation.description}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Remove complex animations and simplify for better performance */
+
+    /* Base styles */
+    .image-container {
+        position: relative;
+        aspect-ratio: 3/2;
+        background-color: #f3f4f6;
+        overflow: hidden;
+    }
+
+    .image-fit {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Simplified animations */
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+
+    .animate-fade {
+        opacity: 0;
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    /* Simplified gradient animation */
+    .animate-gradient-shift {
+        background-size: 200% 200%;
+        transition: background-position 0.3s ease;
+    }
+
+    /* Optimize transitions */
+    .group {
+        transform: translateZ(0);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .group:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+        .responsive-padding {
+            padding-inline: 1rem;
+        }
+    }
+
+    @media (min-width: 641px) {
+        .responsive-padding {
+            padding-inline: 2rem;
+        }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+
+    /* Hardware acceleration for smooth animations */
+    .animate-gpu {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+
+    /* Prevent layout shifts */
+    .grid {
+        grid-auto-rows: 1fr;
+    }
+
+    /* Prevent text overflow */
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>

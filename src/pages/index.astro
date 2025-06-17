@@ -1,0 +1,151 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Home from "../components/home.astro";
+
+// Enhanced SEO metadata
+const pageTitle =
+    "Alcanza Ship | Leading Ship Chandling Services in UAE, Dubai & Saudi Arabia";
+const pageDescription =
+    "Premier ship chandling services in UAE, Dubai, Saudi Arabia & other Gulf countries. Alcanza Ship provides comprehensive marine supplies, 24/7 support, and expert consultation for all maritime needs.";
+const canonicalURL = new URL(Astro.url.pathname, "https://alcanzaship.com");
+
+// Enhanced Schema markup with additional properties
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Alcanza Ship",
+    description: pageDescription,
+    url: canonicalURL,
+    logo: new URL("/home/logo.jpg", Astro.site),
+    image: new URL("/home/image.jpg", Astro.site),
+    foundingDate: "2003", // Add your founding year
+    sameAs: [
+        "https://facebook.com/alcanzaship",
+        "https://twitter.com/alcanzaship",
+        "https://linkedin.com/company/alcanzaship",
+        "https://www.instagram.com/alcanzaship",
+    ],
+    contactPoint: [
+        {
+            "@type": "ContactPoint",
+            telephone: "+971561635323",
+            email: ["sales@alcanzaship.com", "operation@alcanzaship.com"],
+            contactType: "customer service",
+            availableLanguage: ["English", "Arabic"],
+            contactOption: "TollFree",
+            areaServed: "UAE",
+            hoursAvailable: "Mo-Su 00:00-24:00",
+        },
+    ],
+    address: {
+        "@type": "PostalAddress",
+        streetAddress: "Mai Tower, Office 401-405, Al Nahda 1",
+        addressLocality: "Dubai",
+        addressRegion: "Dubai",
+        addressCountry: "UAE",
+    },
+    // Add aggregateRating if you have reviews
+    aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        reviewCount: "150",
+    },
+    // Add price range
+    priceRange: "AED $$-$$$",
+    areaServed: [
+        {
+            "@type": "Country",
+            name: "United Arab Emirates",
+            alternateName: "UAE",
+        },
+        {
+            "@type": "Country",
+            name: "Kingdom of Saudi Arabia",
+            alternateName: "KSA",
+        }
+    ],
+    // Add specific services
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Ship Chandling Services",
+        itemListElement: [
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Ship Chandling Services in UAE"
+                }
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Ship Chandling Services in Dubai"
+                }
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Ship Chandling Services in Saudi Arabia"
+                }
+            }
+        ]
+    }
+};
+
+// Enhanced meta properties with additional tags
+const metaProperties = {
+    "og:title": pageTitle,
+    "og:description": pageDescription,
+    "og:type": "website",
+    "og:url": canonicalURL.toString(),
+    "og:image": new URL("/home/image.jpg", Astro.site).toString(),
+    "og:locale": "en_AE",
+    "og:site_name": "Alcanza Ship",
+    "twitter:card": "summary_large_image",
+    "twitter:title": pageTitle,
+    "twitter:description": pageDescription,
+    "twitter:image": new URL("/home/image.jpg", Astro.site).toString(),
+    "twitter:site": "@alcanzaship",
+    "twitter:creator": "@alcanzaship",
+    "twitter:image:alt": "Alcanza Ship - Marine Supplies & Equipment",
+    "twitter:image:width": "1200",
+    "twitter:image:height": "630",
+    "twitter:image:type": "image/jpeg",
+    "twitter:image:url": new URL("/home/image.jpg", Astro.site).toString(),
+    "twitter:image:secure_url": new URL(
+        "/home/image.jpg",
+        Astro.site,
+    ).toString(),
+    keywords:
+        "ship chandling services UAE, ship chandling services Dubai, ship chandling services Saudi Arabia, marine supplies UAE, ship chandler Dubai, maritime equipment Dubai, ship supplies UAE, ship chandling companies UAE, marine parts UAE, ship chandler Saudi Arabia, marine safety equipment UAE, navigation equipment Dubai",
+    robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    author: "Alcanza Ship",
+    viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+    // Additional performance and SEO meta tags
+    "theme-color": "#ffffff", // Add your brand color
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "format-detection": "telephone=no",
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:alt": "Alcanza Ship - Marine Supplies & Equipment",
+    "Content-Security-Policy": "upgrade-insecure-requests",
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai",
+    "geo.position": "25.2848;55.3222",
+    ICBM: "25.2848, 55.3222",
+    "revisit-after": "7 days",
+};
+---
+
+<Layout
+    title={pageTitle}
+    description={pageDescription}
+    canonicalURL={canonicalURL}
+    metaProperties={metaProperties}
+    schema={schema}
+>
+    <Home />
+</Layout>

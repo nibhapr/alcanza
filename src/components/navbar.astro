@@ -1,0 +1,362 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<header class="font-satoshi pb-24">
+    <!-- Modern Navigation with Glass Effect -->
+    <nav
+        class="bg-white/50 backdrop-blur-sm fixed w-full top-0 z-50 transition-all duration-300 shadow-lg shadow-gray-300/50"
+        id="main-nav"
+    >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-20 md:h-24">
+                <!-- Logo section -->
+                <a href="/" class="flex items-center space-x-3">
+                    <img
+                        src="/home/logo.jpg"
+                        alt="Alcanza ship services"
+                        class="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 rounded-xl object-contain"
+                    />
+                </a>
+
+                <!-- Modern Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="/" class="nav-link">
+                        <span class="nav-text text-base">Home</span>
+                    </a>
+                    <a href="/about" class="nav-link">
+                        <span class="nav-text text-base">About</span>
+                    </a>
+                    <a href="/services" class="nav-link">
+                        <span class="nav-text text-base">Services</span>
+                    </a>
+                    <a href="/contact" class="ml-6 btn-primary">
+                        <span class="relative z-10 text-base">Get Started</span>
+                        <span
+                            class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full blur-md opacity-75 group-hover:opacity-100 transition-opacity duration-300"
+                        ></span>
+                    </a>
+                </div>
+
+                <!-- Modern Mobile Menu Button -->
+                <button
+                    type="button"
+                    class="lg:hidden mobile-menu-button inline-flex items-center justify-center p-4 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200"
+                >
+                    <span class="sr-only">Open menu</span>
+                    <svg
+                        class="w-10 h-10"
+                        stroke="currentColor"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            class="origin-center transition-all duration-200"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2.5"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modern Mobile Menu -->
+        <div class="hidden mobile-menu lg:hidden">
+            <div
+                class="px-4 pt-2 pb-4 space-y-1 bg-white/95 backdrop-blur-xl border-t border-gray-100"
+            >
+                <a href="/" class="mobile-link group">
+                    <span class="relative z-10">Home</span>
+                    <span
+                        class="absolute inset-0 bg-blue-50 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"
+                    ></span>
+                </a>
+                <a href="/about" class="mobile-link">About</a>
+                <a href="/services" class="mobile-link">Services</a>
+                <div class="pt-4">
+                    <a href="/contact" class="mobile-btn-primary">
+                        Get Started
+                        <svg
+                            class="w-5 h-5 ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<style>
+    @import url("https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap");
+
+    .nav-link {
+        @apply relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 rounded-lg
+               hover:bg-blue-50/50 flex items-center space-x-1;
+    }
+
+    .nav-text {
+        @apply transform transition-transform duration-300;
+    }
+
+    .nav-hover-text {
+        @apply transform translate-y-full transition-transform duration-300;
+    }
+
+    .nav-link:hover .nav-text {
+        @apply -translate-y-full;
+    }
+
+    .nav-link:hover .nav-hover-text {
+        @apply translate-y-0;
+    }
+
+    .nav-indicator {
+        @apply absolute -bottom-px left-0 right-0 h-0.5 bg-[#344CB7] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left;
+    }
+
+    .btn-primary {
+        @apply relative inline-flex items-center px-6 py-2.5 text-sm font-medium text-white
+               bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full
+               hover:from-blue-700 hover:to-indigo-700 transition-all duration-300
+               shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/35
+               hover:-translate-y-0.5 active:translate-y-0;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-medium 
+        text-gray-700 bg-white/80 hover:bg-white 
+        transition-all duration-300 hover:shadow-lg 
+        hover:-translate-y-0.5 border border-gray-200/50 
+        backdrop-blur-sm hover:border-violet-200;
+    }
+
+    .mobile-link {
+        @apply relative flex items-center px-4 py-3 text-base font-medium text-gray-700 
+               hover:text-blue-600 transition-colors duration-200 rounded-lg overflow-hidden;
+    }
+
+    .mobile-btn-primary {
+        @apply flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white
+               bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg
+               hover:from-blue-700 hover:to-indigo-700 transition-all duration-200
+               shadow-md shadow-blue-500/20;
+    }
+
+    .mobile-btn-secondary {
+        @apply block w-full text-center px-4 py-3 rounded-xl text-sm font-medium 
+        text-gray-700 bg-gray-50 hover:bg-gray-100 
+        transition-all duration-200 
+        border border-gray-200/50;
+    }
+
+    @keyframes wave {
+        0%,
+        100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-5%) rotate(2deg);
+        }
+    }
+
+    @keyframes wave-delayed {
+        0%,
+        100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-7%) rotate(-2deg);
+        }
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0) translateX(0);
+        }
+        50% {
+            transform: translateY(-5px) translateX(5px);
+        }
+        100% {
+            transform: translateY(0) translateX(0);
+        }
+    }
+
+    .animate-wave {
+        animation: wave 15s ease-in-out infinite;
+    }
+
+    .animate-wave-delayed {
+        animation: wave-delayed 18s ease-in-out infinite;
+    }
+
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    /* Enhanced Animations */
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 8s ease infinite;
+    }
+
+    /* Add scroll behavior */
+    .nav-scrolled {
+        @apply bg-white/95 backdrop-blur-xl shadow-xl shadow-gray-900/10;
+    }
+
+    /* Updated/Added Mobile Styles */
+    .mobile-dropdown-button {
+        @apply flex items-center justify-between px-3 py-2 rounded-xl text-base font-medium text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-colors duration-200 w-full;
+    }
+
+    .mobile-sublink {
+        @apply block px-3 py-2 rounded-xl text-sm font-medium text-gray-600 hover:text-violet-600 hover:bg-violet-50/50 transition-colors duration-200;
+    }
+
+    /* Add new styles */
+    .nav-hidden {
+        transform: translateY(-100%);
+    }
+
+    .nav-visible {
+        transform: translateY(0);
+    }
+
+    /* Enhanced mobile menu animation */
+    .mobile-menu {
+        transition: max-height 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .mobile-menu.active {
+        max-height: 400px;
+    }
+
+    /* Add new fade-in animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    /* Add new breakpoint for extra small devices */
+    @media (min-width: 475px) {
+        .xs\:inline {
+            display: inline;
+        }
+    }
+</style>
+
+<script>
+    const mobileMenuButton = document.querySelector(".mobile-menu-button");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const notificationDismiss = document.querySelector(".notification-dismiss");
+
+    mobileMenuButton?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+        mobileMenu?.classList.toggle("active");
+
+        // Animate the menu icon
+        const icon = mobileMenuButton.querySelector("svg");
+        icon?.classList.toggle("rotate-90");
+    });
+
+    notificationDismiss?.addEventListener("click", () => {
+        notificationDismiss.closest(".notification-bar")?.remove();
+    });
+
+    // Get the notification bar and dismiss button elements
+    const notificationBar = document.getElementById("notification-bar");
+    const dismissButton = document.getElementById("notification-dismiss");
+
+    // Add click event listener to the dismiss button
+    dismissButton?.addEventListener("click", () => {
+        const parentElement = dismissButton.closest("#notification-bar");
+        if (parentElement) {
+            (parentElement as HTMLElement).style.opacity = "0";
+            (parentElement as HTMLElement).style.transition =
+                "opacity 0.3s ease-out";
+            setTimeout(() => {
+                parentElement.remove();
+            }, 300);
+        }
+    });
+
+    // Enhanced scroll behavior with debouncing
+    const nav = document.getElementById("main-nav");
+    let lastScroll = 0;
+    let timeout: ReturnType<typeof setTimeout>;
+
+    function debounce(func: Function, wait: number) {
+        let timeout: NodeJS.Timeout;
+        return function executedFunction(...args: any[]) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    const handleScroll = debounce(() => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll <= 0) {
+            nav?.classList.remove("nav-scrolled");
+        } else {
+            nav?.classList.add("nav-scrolled");
+        }
+
+        lastScroll = currentScroll;
+    }, 10);
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Add mobile dropdown functionality
+    const mobileDropdownButtons = document.querySelectorAll(
+        ".mobile-dropdown-button",
+    );
+
+    mobileDropdownButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector("svg");
+
+            content?.classList.toggle("hidden");
+            icon?.classList.toggle("rotate-180");
+        });
+    });
+</script>

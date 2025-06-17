@@ -1,0 +1,249 @@
+---
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+// Add interface for type safety
+interface Props {
+	title: string;
+	description: string;
+	canonicalURL?: URL;
+	metaProperties?: Record<string, string>;
+	schema?: object;
+	metaTags?: Record<string, string>;
+}
+
+// Destructure props with improved defaults
+const {
+	title = "Alcanza Ship | Professional Ship Chandling Services in UAE & Saudi Arabia",
+	description = "Leading ship chandling services provider in UAE, Dubai & Saudi Arabia. Professional marine supplies, technical equipment, and comprehensive ship chandling solutions across GCC.",
+	canonicalURL,
+	metaProperties = {
+		"og:type": "website",
+		"og:site_name": "Alcanza Ship Chandling Services",
+		"og:locale": "en_AE",
+		"og:image": "/home/logo.jpg", // Update with your actual logo path
+		"og:image:alt": "Alcanza Ship Chandling Services Logo",
+		"twitter:creator": "@alcanzaship", // Update with your Twitter handle
+	},
+	schema = {
+		"@context": "https://schema.org",
+		"@type": "MarineBusinessEstablishment",
+		name: "Alcanza Ship Chandling Services",
+		description:
+			"Professional ship chandling services in UAE, Dubai, Saudi Arabia and other GCC countries. Specialized in marine supplies and technical equipment.",
+		image: "/home/logo.jpg", // Update with your actual logo path
+		"@id": "https://alcanzaship.com",
+		url: "https://alcanzaship.com",
+		telephone: "+971561635323",
+		address: {
+			"@type": "PostalAddress",
+			streetAddress: "Mai Tower, Office 401-405, Al Nahda 1",
+			addressLocality: "Dubai",
+			addressCountry: "AE",
+		},
+		geo: {
+			"@type": "GeoCoordinates",
+			latitude: "25.276987", // Actual coordinates for Dubai
+			longitude: "55.296249",
+		},
+		openingHoursSpecification: {
+			"@type": "OpeningHoursSpecification",
+			dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+			opens: "09:00",
+			closes: "18:00",
+		},
+		sameAs: [
+			"https://facebook.com/alcanzaship", // Update with your social media links
+			"https://linkedin.com/company/alcanzaship",
+			"https://twitter.com/alcanzaship",
+		],
+	},
+	metaTags = {
+		// Add any additional metaTags here
+	},
+} = Astro.props;
+
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
+import { ViewTransitions } from "astro:transitions";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/react";
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<!-- Enhanced metadata -->
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#ffffff" />
+
+		<!-- OpenGraph and Twitter metadata -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={metaProperties["og:image"]} />
+		<meta name="twitter:card" content="summary_large_image" />
+
+		<GoogleAnalytics />
+		<!-- Optimized font loading strategy -->
+		<link
+			rel="preload"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+			as="style"
+			crossorigin
+			onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		<noscript>
+			<link
+				rel="stylesheet"
+				href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+			/>
+		</noscript>
+
+		<!-- Add view transitions -->
+		<ViewTransitions />
+
+	
+		<script is:inline>
+			document.addEventListener("DOMContentLoaded", () => {
+				if (window.innerWidth >= 768) {
+					window.AOS?.init({
+						duration: 1000,
+						once: true,
+						easing: "ease-out-cubic",
+					});
+				}
+			});
+		</script>
+
+		<link rel="canonical" href={canonicalURL} />
+		<title>{title}</title>
+
+		<!-- Open Graph / Twitter -->
+		{
+			Object.entries(metaProperties).map(([property, content]) => (
+				<meta property={property} content={content} />
+			))
+		}
+
+		<!-- Schema.org -->
+		{
+			schema && (
+				<script
+					type="application/ld+json"
+					set:html={JSON.stringify(schema)}
+				/>
+			)
+		}
+
+		<!-- Enhanced SEO meta tags -->
+		<meta name="author" content="Alcanza Ship Chandling Services" />
+		<meta name="robots" content="index, follow" />
+		<meta
+			name="keywords"
+			content="ship chandling services UAE, ship chandling services Dubai, ship chandling Saudi Arabia, marine supplies Dubai, ship chandlers UAE, ship supplies Dubai, ship chandling Abu Dhabi, ship chandling Sharjah, ship chandling Ajman, ship chandling Fujairah, marine equipment UAE"
+		/>
+		<meta name="geo.region" content="AE-DU" />
+		<meta name="geo.placename" content="Dubai" />
+		<meta name="geo.position" content="25.XXXXX;55.XXXXX" />
+		<!-- Add actual coordinates -->
+		<meta name="ICBM" content="25.XXXXX, 55.XXXXX" />
+		<!-- Add actual coordinates -->
+
+		<!-- Enhanced social media meta tags -->
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="en_AE" />
+		<meta
+			property="og:site_name"
+			content="Alcanza Ship Chandling Services"
+		/>
+		<meta
+			property="og:street-address"
+			content="Mai Tower, Office 401-405, Al Nahda 1"
+		/>
+		<meta property="og:locality" content="Dubai" />
+		<meta property="og:country-name" content="United Arab Emirates" />
+
+		<!-- Structured contact data -->
+		<link rel="author" href="mailto:sales@alcanzaship.com" />
+		<link rel="alternate" hreflang="en-ae" href={canonicalURL} />
+
+		<!-- Dynamic phone number -->
+		<meta
+			property="business:contact_data:phone_number"
+			content="+971561635323"
+		/>
+		<meta
+			property="business:contact_data:email"
+			content="sales@alcanzaship.com"
+		/>
+
+		<!-- Additional meta tags -->
+		{
+			Object.entries(metaTags).map(([name, content]) =>
+				name.startsWith("og:") ? (
+					<meta property={name} content={content} />
+				) : (
+					<meta name={name} content={content} />
+				),
+			)
+		}
+
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/home/logo.jpg">
+		<link rel="icon" type="image/png" sizes="32x32" href="/home/logo.jpg">
+		<link rel="icon" type="image/png" sizes="16x16" href="/home/logo.jpg">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/home/logo.jpg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body>
+		<Navbar />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+		<Analytics />
+		<SpeedInsights />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--max-width: 1440px;
+		--navbar-height: 60px;
+
+		/* Add some useful CSS variables */
+		--content-padding: clamp(1rem, 5vw, 2rem);
+		--transition-speed: 0.3s ease;
+	}
+
+	/* Modern CSS reset additions */
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	/* Improve default styling */
+	html {
+		scroll-behavior: smooth;
+		text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
+	}
+
+	/* Improve main content styling */
+	main {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: 0 var(--content-padding);
+		width: 100%;
+	}
+
+	/* Add print styles */
+	@media print {
+		.no-print {
+			display: none !important;
+		}
+	}
+</style>
